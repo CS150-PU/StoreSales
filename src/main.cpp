@@ -9,12 +9,27 @@
 //******************************************************************************
 
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
 int main () {
+  const string FILE_NAME = "data/sales.txt";
+  const int QUANTITY = 100;
+  const char SALE_CHARACTER = '*';
 
-  cout << "Hello World" << endl;
-  
+  int numStores;
+  int storeSales;
+
+  ifstream inFile;
+
+  inFile.open (FILE_NAME);
+  if (inFile.fail ()) {
+    cout << "Error Opening File: " << FILE_NAME << endl;
+    exit (EXIT_FAILURE);
+  }
+
+  inFile.close ();
+
   return EXIT_SUCCESS;
 }
